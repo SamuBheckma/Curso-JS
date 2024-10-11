@@ -6,12 +6,16 @@
     <title>DOM</title>
 </head>
 <body>
-    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"> 
+    <div id="area"> 
         Interaja...
     </div>
-
+     
     <script>
         var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
         function clicar() {
             a.innerText = 'clicou!'
             a.style.background = 'red'
@@ -23,6 +27,8 @@
             a.innerText = 'Saiu!'
             a.style.background = 'green'
         }
+
+        // Ou dentro de div colocar: onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
     </script>
 </body>
 </html>
